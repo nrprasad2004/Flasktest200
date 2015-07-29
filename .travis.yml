@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.7"
+# command to install dependencies
+install:
+  - "pip install ."
+  - "pip install -r requirements.txt"
+# command to run tests
+script: nosetests
+deploy:
+   edge: true
+   provider: cloudfoundry
+   username: nrprasad2004@gmail.com
+   password: r121065p
+   api: https://api.run.pivotal.io
+   organization: nrprasad2004.org
+   space: development
