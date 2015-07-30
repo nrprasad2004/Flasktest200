@@ -13,4 +13,4 @@ deploy:
    api: https://api.run.pivotal.io
    organization: nrprasad2004.org
    space: development
-    edge: true
+    
