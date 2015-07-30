@@ -9,6 +9,7 @@ install:
 # command to run tests
 script: nosetests
 deploy:
+   edge: true
    provider: cloudfoundry
    username: nrprasad2004@gmail.com
    password: r121065p
