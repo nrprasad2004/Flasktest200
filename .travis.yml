@@ -1,3 +1,4 @@
+sudo: required
 language: python
 python:
   - "2.7"
@@ -10,7 +11,6 @@ install:
 script: nosetests
 deploy:
    edge: true
-   sudo: required
    provider: cloudfoundry
    username: nrprasad2004@gmail.com
    password: r121065p
