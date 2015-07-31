@@ -2,4 +2,6 @@ applications:
 -name: flasktest.py
 memory: 256M
 runtime: python27
+command: python flasktest.py
+
 
