@@ -1,7 +1,8 @@
-applications: 
--name: flasktest.py
-memory: 256M
-runtime: python27
-command: python flasktest.py
+applications:
+- name: flasktest
+  memory: 256M
+  instances: 1
+  command: python flasktest.py
+  
 
 
