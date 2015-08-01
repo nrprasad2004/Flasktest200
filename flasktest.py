@@ -4,6 +4,7 @@
 # Date   : 8/1/2015
 from flask import Flask, render_template
 import os
+import time
 
 app = Flask(__name__)
 
@@ -11,7 +12,9 @@ port = int(os.getenv("VCAP_APP_PORT"))
 
 @app.route('/')
 def TemperatureMonitor():
-     return render_template('TemperatureMonitor.html')
+	mtime =  time.strftime("%H:%M:%S")
+        return render_template('TemperatureMonitor.html', cftime = mtime)
+
 #    return 'Hello World2 ! I am running on port ' + str(port)
 
 @app.route('/displayAll')
@@ -69,8 +72,9 @@ def displaytemperatures():
 		mtemp6 = all_lines[mlen-1]
 	else:
 		mtemp6=0
-
-        return render_template('TemperatureMonitor2.html', cf1t1=mtemp1, cf2t1=mtemp2, cf3t1=mtemp3, cf4t1=mtemp4, cf5t1=mtemp5, cf6t1=mtemp6)
+	
+	mtime =  time.strftime("%H:%M:%S")
+        return render_template('TemperatureMonitor2.html', cf1t1=mtemp1, cf2t1=mtemp2, cf3t1=mtemp3, cf4t1=mtemp4, cf5t1=mtemp5, cf6t1=mtemp6, cftime = mtime)
         
 
 
