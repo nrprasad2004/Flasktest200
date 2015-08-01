@@ -9,7 +9,7 @@ install:
   - pip install -q -r requirements.txt
   - pip install -q -e .
 script:
-  - python flasktest200.py
+  - python flasktest.py
 
 # command to install dependencies
 #install:
