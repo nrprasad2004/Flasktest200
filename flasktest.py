@@ -2,13 +2,12 @@
 # ALLSTARS Team
 # Author : Rama prasad Nakka 
 # Date   : 8/1/2015
-
 from flask import Flask, render_template
 import os
 
 app = Flask(__name__)
 
-#port = int(os.getenv("VCAP_APP_PORT"))
+port = int(os.getenv("VCAP_APP_PORT"))
 
 @app.route('/')
 def TemperatureMonitor():
@@ -22,37 +21,31 @@ def displaytemperatures():
 	file.close()
 	mlen = len(all_lines)
 	mtemp1 = all_lines[mlen-1]
-
 	file = open("datafile_cf2", "r")
 	all_lines = file.readlines()
 	file.close()
 	mlen = len(all_lines)
 	mtemp2 = all_lines[mlen-1]
-
 	file = open("datafile_cf3", "r")
 	all_lines = file.readlines()
 	file.close()
 	mlen = len(all_lines)
 	mtemp3 = all_lines[mlen-1]
-
  	file = open("datafile_cf4", "r")
 	all_lines = file.readlines()
 	file.close()
 	mlen = len(all_lines)
 	mtemp4 = all_lines[mlen-1]
-
 	file = open("datafile_cf5", "r")
 	all_lines = file.readlines()
 	file.close()
 	mlen = len(all_lines)
 	mtemp5 = all_lines[mlen-1]
-
 	file = open("datafile_cf6", "r")
 	all_lines = file.readlines()
 	file.close()
 	mlen = len(all_lines)
 	mtemp6 = all_lines[mlen-1]
-
 	return render_template('TemperatureMonitor2.html' , cf1t1=mtemp1, cf2t1=mtemp2, cf3t1=mtemp3, cf4t1=mtemp4 ,cf5t1=mtemp5,cf6t1=mtemp6         )
 
 @app.route('/cf1/<temperature>')
