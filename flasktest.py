@@ -8,7 +8,7 @@ port = int(os.getenv("VCAP_APP_PORT"))
 
 @app.route('/')
 def TemperatureMonitor():
-     return render_template('index.html')
+     return render_template('TemperatureMonitor.html')
 #    return 'Hello World2 ! I am running on port ' + str(port)
 
 if __name__ == '__main__':
