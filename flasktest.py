@@ -16,7 +16,16 @@ def TemperatureMonitor():
 
 @app.route('/displayAll')
 def displaytemperatures():
-        return render_template('TemperatureMonitor.html')
+	if os.path.isfile("datafile_cf1"):
+        	file = open("datafile_cf1", "r")
+                all_lines = file.readlines()
+                file.close()
+                mlen = len(all_lines)
+                mtemp1 = all_lines[mlen-1]
+        else:
+                mtemp1=0
+
+        return render_template('TemperatureMonitor2.html', cf1t1=mtemp1)
 
 
 @app.route('/cf1/<temperature>')
