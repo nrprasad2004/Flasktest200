@@ -7,7 +7,7 @@ env:
 install:
   - pip install -q Flask==$FLASK
   - pip install -q -r requirements.txt
-  - pip install -q -e .
+#  - pip install -q -e .
 script:
   - python flasktest.py
 
