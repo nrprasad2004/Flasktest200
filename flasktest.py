@@ -51,8 +51,8 @@ def displaytemperatures():
 	file.close()
 	mlen = len(all_lines)
 	mtemp6 = all_lines[mlen-1]
-
-	return render_template('TemperatureMonitor2.html' , cf1t1=mtemp1, cf2t1=mtemp2, cf3t1=mtemp3, cf4t1=mtemp4 ,cf5t1=mtemp5,cf6t1=mtemp6         )
+	#return render_template('TemperatureMonitor2.html' , cf1t1=mtemp1, cf2t1=mtemp2, cf3t1=mtemp3, cf4t1=mtemp4 ,cf5t1=mtemp5,cf6t1=mtemp6         )
+        return render_template('TemperatureMonitor.html')
 
 
 @app.route('/cf1/<temperature>')
