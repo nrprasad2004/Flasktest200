@@ -1,14 +1,27 @@
-sudo: required
-language: python
-python:
-  - "2.7"
-# command to install dependencies
+sudo: false
 before_install:
 - gem update --system 1.8.30
+language: python
+python:
+  - 2.6
+  - 2.7
+env:
+  - FLASK=0.10.1
+  - FLASK=0.9
+  - FLASK=0.8.1
+  - FLASK=0.7.2
 install:
-  - "pip install -r requirements.txt"
+  - pip install -q Flask==$FLASK
+  - pip install -q -r requirements.txt
+  - pip install -q -e .
+script:
+  - python setup.py test
+
+# command to install dependencies
+#install:
+#  - "pip install -r requirements.txt"
 # command to run tests
-script: nosetests
+#script: nosetests
 deploy:
    edge: true
    provider: cloudfoundry
